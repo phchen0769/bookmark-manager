@@ -24,6 +24,7 @@
   },
   "manifest": {
     "permissions": ["bookmarks", "storage", "sidePanel"],
+    "host_permissions": ["http://*/*", "https://*/*"],
     "side_panel": {
       "default_path": "sidepanel.html"
     }

@@ -35,3 +35,30 @@ export interface BookmarkStats {
   maxDepth: number
   duplicates: number
 }
+
+/** AI 服务配置（用户可在界面填写并保存） */
+export interface AiConfig {
+  /** API 地址，如 http://10.178.34.133:8317 */
+  baseUrl: string
+  /** 模型名，如 deepseek-v4-pro */
+  model: string
+  /** API Key（可选，有些内网服务不需要） */
+  apiKey: string
+}
+
+/** AI 返回的单个书签分类结果 */
+export interface ClassificationResult {
+  /** 书签 id */
+  id: string
+  /** 建议归入的文件夹名 */
+  category: string
+  /** 建议打的标签 */
+  tags: string[]
+}
+
+/** 分类过程进度 */
+export interface ClassifyProgress {
+  done: number
+  total: number
+  phase: "classifying" | "applying"
+}
