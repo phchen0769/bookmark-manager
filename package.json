@@ -1,0 +1,41 @@
+{
+  "name": "bookmark-manager",
+  "displayName": "Bookmark Manager",
+  "version": "0.1.0",
+  "description": "A smart Chrome extension for bookmark management (search, dedupe, dead-link detection)",
+  "author": "phchen0769",
+  "license": "MIT",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "plasmo": "0.90.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.268",
+    "@types/node": "20.14.15",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.4"
+  },
+  "manifest": {
+    "permissions": ["bookmarks", "storage", "sidePanel"],
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "esbuild",
+      "lmdb",
+      "msgpackr-extract",
+      "sharp"
+    ]
+  }
+}
